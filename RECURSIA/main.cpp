@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 using namespace std;
 
 void comArray(int arr[], const int num)
@@ -60,7 +60,7 @@ int sumArray(int arr[], int num, int sum)
 
 long int composicion(int arr[], int num, long int com)
 {
-	if (num == 1)
+	if (num == 0)
 	{
 		return com;
 	}
@@ -72,7 +72,7 @@ long int composicion(int arr[], int num, long int com)
 
 int elementArray(int arr[], int num, int num2)
 {
-	if (num == 1)
+	if (num == 0)
 	{
 		cout << "false" << endl;
 		return 0;
@@ -176,6 +176,7 @@ int oddNum(int arr[], int num, int counter)
 
 int main()
 {
+	setlocale(LC_ALL, "");
 	srand(time(NULL));
 
 	const int num = 5;
@@ -183,48 +184,48 @@ int main()
 	int arr[num];
 
 	comArray(arr, num);
-
+	cout << "Печать массива на экран:";
 	printArray(arr, num);
 
 	cout << endl;
-
+	cout << "Поиск минимума: ";
 	int min = arr[0];
 
 	cout << minArray(arr, num, min) << endl;
 
+	cout << "Поиск максимума: ";
 	int max = arr[0];
 
 	cout << maxArray(arr, num, max) << endl;
-
+	cout << "Поиск суммы элементов массива:";
 	int sum = 0;
 
 	cout << sumArray(arr, num, sum) << endl;
-
+	cout << "Поиск произведения элементов массива:";
 	long int com = 1;
 
 	cout << composicion(arr, num, com) << endl;
-
+	cout << "Проверка наличия элемента в массиве"<<endl;
 	int num2;
 
-	cout << "Enter number: ";
+	cout << "Введите число: ";
 	cin >> num2;
 
 	elementArray(arr, num, num2);
 
+	cout << "Подсчёт количества отрицательных элементов массива:";
+
 	int counter = 0;
-
-	printArray1(arr, num, counter);
-
-	cout << endl;
 
 	cout << countNegative(arr, num, counter) << endl;
 
+	cout << "Подсчёт количества вхождений элемента в массив:";
 	cout << entryElement(arr, num, counter, num2) << endl;
-
+	cout << "Подсчёт количества чётных элементов в массиве:";
 	cout << evenNum(arr, num, counter) << endl;
-
+	cout << "Подсчёт количества положительных элементов в массиве:";
 	cout << countPositive(arr, num, counter) << endl;
-
+	cout << "Подсчёт количества нечётных элементов в массиве:";
 	cout << oddNum(arr, num, counter) << endl;
 
 	return 0;
